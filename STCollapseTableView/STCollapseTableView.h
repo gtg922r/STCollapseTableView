@@ -29,10 +29,10 @@
  ***********************************************************************************/
 
 #import <UIKit/UIKit.h>
-
+@class STCollapseTableView;
 @protocol STCollapseTableViewSectionDelegate <NSObject>
 @optional
--(void)didToggleSection:(NSUInteger)sectionIndex collapsed:(BOOL)collapsed;
+- (void)collapsingTableView:(STCollapseTableView *)tableview didToggleSection:(NSUInteger)sectionIndex collapsed:(BOOL)collapsed;
 @end
 
 /**

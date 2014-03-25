@@ -185,18 +185,18 @@
         }
 	}
     
-    if ([self.delegate respondsToSelector:@selector(didToggleSection:collapsed:)])
+    if ([self.delegate respondsToSelector:@selector(collapsingTableView:didToggleSection:collapsed:)])
     {
-        [self.collapseSectionDelegate didToggleSection:sectionIndex collapsed:NO];
+        [self.collapseSectionDelegate collapsingTableView:self didToggleSection:sectionIndex collapsed:NO];
     }
 }
 
 - (void)closeSection:(NSUInteger)sectionIndex animated:(BOOL)animated
 {
     [self setSectionAtIndex:sectionIndex open:NO];
-    if ([self.delegate respondsToSelector:@selector(didToggleSection:collapsed:)])
+    if ([self.delegate respondsToSelector:@selector(collapsingTableView:didToggleSection:collapsed:)])
     {
-        [self.collapseSectionDelegate didToggleSection:sectionIndex collapsed:YES];
+        [self.collapseSectionDelegate collapsingTableView:self didToggleSection:sectionIndex collapsed:YES];
     }
 	if (animated)
     {
